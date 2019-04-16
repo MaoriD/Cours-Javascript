@@ -1,5 +1,5 @@
 # Cours de Javascript
-Ce mini-cours a pour but de répertorier les lignes de codes essentielles de Javascript avec un commentaire pour les comprendre dans le but d'apprendre beaucoup rapidement !
+Ce mini-cours a pour but de répertorier les lignes de codes essentielles de Javascript avec un commentaire pour les comprendre dans le but d'apprendre beaucoup plus rapidement ! J'y aborde le Javascript, le jQuery, NodeJS, npm et le scrapping avec Nightmare ! Basé sur la formation Le Wagon.
 
 ## Création des documents
 Tout d'abord, il faut créer un dossier `html`contenant un fichier `nom.html`. Ensuite, il faut entrer dans ce fichier et y écrire :
@@ -25,9 +25,8 @@ Ensuite, il faut créer un dossier `js`et y créer un fichier `nom.js`. Attentio
 
 > Pour avoir un aperçu de notre code Javascript, il faut ouvrir le fichier `nom.html` dans le navigateur, puis faire clic droit n'importe où "Inspecter l'élement" et ouvrir la console.
 
-## Codez !
+## Place au code
 
-# Javascript
 
 > Documentation : [https://developer.mozilla.org/fr/docs/Web/JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 
