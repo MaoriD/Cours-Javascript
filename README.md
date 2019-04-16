@@ -47,7 +47,7 @@ On écrit en camelCase. On met une majuscule à tous les mots sans espace à par
 
 Exemple : ceciEstUneVariableEnCamelCase
 
-**Executer le javascript**
+**Executer le javascript dans la console du navigateur**
 
     console.log(trucAExecuter);
 
