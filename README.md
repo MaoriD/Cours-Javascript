@@ -156,7 +156,6 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
 
 **Boucle, exécute le code en boucle tant que la condition d'arrêt n'est pas valide**
 
-![](Capture_decran_2019-04-07_a_12-7d045cc8-1a1d-4781-bb8d-156ae5a01032.11.13.png)
 
     var nomTableau = [12, 15, 9, 18, 11, 14];
     //        Index   0,  1,  2,  3,  4,  5 (la première valeur d'un tableau correspond à 0, la seconde à 1 etc... JS commence toujours par 0)
@@ -383,11 +382,6 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
     		}
     
 
-**RegEx**
-
-**Permet de faire des recherches dans le code**
-
-![](Capture_decran_2019-04-13_a_00-5b788b98-8d87-40f0-a9a1-8b4881ddfde7.36.29.png)
 
 **Tester si un code postal est correct**
 
