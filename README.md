@@ -28,8 +28,6 @@ Ensuite, il faut créer un dossier `js`et y créer un fichier `nom.js`. Attentio
 ## Place au code
 
 
-# Javascript
-
 > Documentation : [https://developer.mozilla.org/fr/docs/Web/JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 
 **Déclarer des  variables constantes**
