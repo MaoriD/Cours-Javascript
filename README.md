@@ -28,9 +28,11 @@ Ensuite, il faut créer un dossier `js`et y créer un fichier `nom.js`. Attentio
 ## Place au code
 
 
+# Javascript
+
 > Documentation : [https://developer.mozilla.org/fr/docs/Web/JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 
-**Déclarer une variable**
+**Déclarer des  variables constantes**
 
     var nomVariable = number; // Variable de type nombre, avec une valeur
     var nomString = "string"; // Variable string, une chaîne de caractères
@@ -40,6 +42,8 @@ Ensuite, il faut créer un dossier `js`et y créer un fichier `nom.js`. Attentio
     	propriete1: "myProperty1",
     	propriete2: "myProperty2",
     } // Variable objet avec plusieurs propriétés dedans
+    let nomVariable // Permet de créer comme var (mieux que var, donc à favoris)
+    const nomConstante // créer une valeur qui ne change pas
 
 **Ecrire des variables**
 
@@ -47,9 +51,11 @@ On écrit en camelCase. On met une majuscule à tous les mots sans espace à par
 
 Exemple : ceciEstUneVariableEnCamelCase
 
-**Executer le javascript dans la console du navigateur**
+**Executer le javascript**
 
-    console.log(trucAExecuter);
+    console.log(trucAExecuter); // Affiche dans la console du navigateur
+    alert() // Affiche une popin
+    prompt() // Afficher une poppin avec une chaîne de caractère à entrer
 
 **Modulo (%)**
 
@@ -58,7 +64,6 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
 
 **Renvoyer le type de la variable**
 
-    
     var nomVariable = "test";
     console.log(typeof(nomVariable));
     
@@ -66,7 +71,11 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
 
 **Faire un commentaire, utiliser pour expliquer le code**
 
-    // Commentaire
+    // Commentaire sur une ligne
+    
+    /* 
+    Commentaire sur plusieurs lignes
+    */
 
 **Faire une concaténation, afficher deux variables**
 
@@ -91,8 +100,8 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
 
 **Opérateurs de comparaisons, pour vérifier des variables**
 
-    == // Vérifie si deux variables sont égales
-    != // Vérifie si deux variables sont différentes
+    === // Vérifie si deux variables sont égales
+    !== // Vérifie si deux variables sont différentes
     < // Inférieur
     > // Supérieur
     >= // Supérieur ou égal
@@ -113,17 +122,16 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
         // Instructions à exécuter lorsque le résultat
         // de l'expression correspond à valeur1
         instructions1;
-        [break;]
+        [break];
       case valeur2:
         // Instructions à exécuter lorsque le résultat
         // de l'expression correspond à valeur2
         instructions2;
-        [break;]
+        [break];
     [default:
         // Instructions à exécuter lorsqu'aucune des valeurs
-        // ne correspond 
-        instructions_def;
-        [break;]]
+        // ne correspond à instructions_def;
+        [break];
 
 **Indiquer l'heure actuelle**
 
@@ -146,16 +154,32 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
     var nomTableau [1, 2, 3]; // Créer un tableau 
     nomTableau; // Affiche le tableau
     nomTableau[1]; // Afficher la seconde valeur du tableau (la première valeur d'un tableau est égale à 0 en JS)
-    nomTableau.push("valeur"); // Ajoute une valeur au tableau
+    nomTableau.push("valeur"); // Ajoute une valeur à la fin du tableau
+    nomTableau.unshift("valeur"); // Ajoute une valeur au début du tableau
+    nomTableau.pop(); // Supprime la dernière valeur du tableau
     nomTableau[0] = 5; // Remplace la première valeur du tableau par 5
     nomTableau.length; // Renvoie le nombre de valeurs dans le tableau
 
-**Ajouter une variable dans un tableau**
+**Classe**
 
-    nomTableau.push("valeur");
+    class Contact { // Créer une classe nommé Contact (mettre toujours en majuscule)
+        constructor(nom, prenom) { // Composé d'un constructeur avec paramètre nom et prénom
+          this.nom = nom; // Son nom correspond au paramètre nom
+          this.prenom = prenom; // Son prénom correspond au paramètre prénom
+        }
+        description() { // Je créé une fonction qui retourne une phrase compréhensive
+            return `Nom: ${this.nom}, prénom: ${this.prenom}`;
+        }
+    }
+    
+    const listeContacts = []; // Je créé un tableau 
+    listeContacts.push(new Contact("Lévis", "Carole")); // J'ajoute un contact dans ce tableau
+    
+    listeContacts.forEach(contact => { // Je créé une boucle du tableau avec le paramètre contact
+                console.log(contact.description()); // Affiche la fonction description du contact
+            }); // Vu que c'est une boucle forEach ça l'execute tant qu'il y a des contacts
 
 **Boucle, exécute le code en boucle tant que la condition d'arrêt n'est pas valide**
-
 
     var nomTableau = [12, 15, 9, 18, 11, 14];
     //        Index   0,  1,  2,  3,  4,  5 (la première valeur d'un tableau correspond à 0, la seconde à 1 etc... JS commence toujours par 0)
@@ -163,7 +187,7 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
     var sum = 0;
     
     
-    for(var i = 0; i < nomTableau.length; i++ {
+    for(var i = 0; i < nomTableau.length; i++) {
     sum = sum + nomTableau[i];
     } 
     
@@ -194,8 +218,16 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
     }
     nomFonction("parametre"); // Appelle la fonction, la lance
     
+    // Exemple 1 :
+    function direBonjour(prenom) {
+      const message = `Bonjour, ${prenom} !`;
+      return message;
+    }
     
-    // Exemple :
+    console.log(direBonjour("Baptiste")); // "Bonjour, Baptiste !"
+    console.log(direBonjour("Sophie")); // "Bonjour, Sophie !"
+    
+    // Exemple 2:
     function average(grades) {
       var sum = 0;
       for (var i = 0 ; i < grades.length; i++) { // Boucle for dans la fonction (voir section boucle for)
@@ -237,7 +269,111 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
     	}
     }
 
-**Programmation orientée objet**
+## Accéder et manipuler le DOM
+
+**Accéder**
+
+    const Elt = document.getElementById('myID'); // Créer une constante qui récupere le contenu de la balise avec l'ID myID
+    document.getElementsByClassName('myClass') // Idem avec une class, s'il y a plusieurs class, créer un tableau avec les différents éléments
+    document.getElementsByTagName('div') // Idem avec une balise HTML
+    document.querySelector("#myId p.article > a") // Sélectionner le lien enfant du p avec la class article qui se trouve dans la balise avec l'ID myID
+    element.children // Les enfants d'un élément
+    element.parentElement // Le parent d'un element
+    element.nextElementSibling // L'élément d'après qui se trouve à la même hauteur 
+    element.nextElementSibling // L'élément qui se trouve avant à la même hauteur
+    
+
+**Ajouter du contenu HTML**
+
+    let elt = document.getElementById('main');
+    elt.innerHTML = "<ul><li>Elément 1</li><li>Elément 2</li></ul>"; // Ajouter une liste à la main
+
+**Ajouter/supprimer/modifier des class**
+
+    elt.classList.add("nouvelleClasse");    // Ajoute la classe nouvelleClasse à l'élément
+    elt.classList.remove("nouvelleClasse"); // Supprime la classe nouvelleClasse que l'on venait d'ajouter
+    elt.classList.contains("nouvelleClasse");   // Retournera false car on vient de la supprimer
+    elt.classList.replace("oldClass", "newClass"): // Remplacera oldClass par newClass si oldClass était présente sur l'élément
+
+**Changer le style d'un élément**
+
+    elt.style.color = "#fff";      // Change la couleur du texte de l'élément à blanche
+    elt.style.backgroundColor = "#000"; // Change la couleur de fond de l'élément en noir
+    elt.style.fontWeight = "bold"; // Met le texte de l'élément en gras
+
+**Modifier les attributs**
+
+    elt.setAttribute("type", "password"); // Change le type de l'input en un type password
+    elt.removeAttribute("attribute"); // Ajouter un attribut appelé attribute
+    elt.setAttribute("name", "my-password"); // Change le nom de l'input en my-password
+    elt.getAttribute("name"); // Retourne my-password
+
+**Créer de nouveaux éléments**
+
+    const newElt = document.createElement("div"); // Créer une div
+    let elt = document.getElementById("main"); // Récupère la main
+    
+    elt.appendChild(newElt); // Ajoute à main (elt) la div (newElt) en tant qu'enfant
+    elt.removeChild(newElt); // Supprime l'élément newElt de l'élément elt
+    elt.replaceChild(document.createElement("article"), newElt); // Remplace l'élément newElt par un nouvel élément de type article
+
+**Détecter des éléments**
+
+    const elt = document.getElementById('mon-lien'); // On récupère l'élément sur lequel on veut détecter le clic
+    elt.addEventListener('click', function(event) { // On écoute l'événement click, notre callback prend un paramètre que nous avons appelé event ici
+        elt.innerHTML = "C'est cliqué !"; // On change le contenu de notre élément pour afficher "C'est cliqué !"
+    		event.preventDefault(); // On utilise la fonction preventDefault de notre objet event pour empêcher le comportement (changer de page pour un lien) par défaut de cet élément lors du clic de la souris
+    		event.stopPropagation(); // Empêche la propagation de l'évènement vers le parent, ce qui est le cas par defaut en Javascript
+    });
+
+**Détecter mouvement souris**
+
+    elt.addEventListener('mousemove', function(event) { // Ecouter l'évènenement
+        const x = event.offsetX; // Coordonnée X de la souris dans l'élément
+        const y = event.offsetY; // Coordonnée Y de la souris dans l'élément
+    });
+
+*Exemple*
+
+    document.getElementById("name").addEventListener("input", function(event) { // Je détecte la balise avec ID name et je detecte l'event input et créé une fonction
+      document.getElementById("res-name").innerHTML = event.target.value; // J'ajoute dans res-name (target signifie l'élément sur lequel s'est produit l'évènement et value la valeur du champs
+    });
+    
+    document.getElementById("gender").addEventListener("change", function(event) { // Je detecte gender et j'écoute le changement d'un select grâce à "change"
+      document.getElementById("res-gender").innerHTML = event.target.value; // J'ajoute la valeur à res gender
+    });
+    
+    document.querySelector('body').addEventListener('mousemove', function(event) { // Je détecte le mouvement de la souris à mouvemove
+        document.getElementById("mouse-x").innerHTML = event.offsetX + ""; // J'ajoute la valeur de X de la souris dans mouse-x
+        document.getElementById("mouse-y").innerHTML = event.offsetY + ""; // J'ajoute la valeur de Y de la souris dans mouse-y
+    });
+
+**Vérifier les données d'un formulaire**
+
+    myInput.addEventListener('input', function(e) {
+        var value = e.target.value;
+        if (value.startsWith('Hello ')) { // Je vérifie ici si il commence par Hello
+            isValid = true;
+        } else {
+            isValid = false;
+        }
+    });
+
+## Scrapping via Ajax
+
+    var request = new XMLHttpRequest(); // Créer un nouvel objet de type XMLHttpRequest qui correspond à l'objet Ajax
+    request.onreadystatechange = function() { // onreadystatechange = Contient l'état de la requête
+        if (this.readyState == XMLHttpRequest.DONE && this.status == 200) { // status = contient le code de statut de la requête
+            var response = JSON.parse(this.responseText); // responseText qui contient la réponse du service web au format Texte
+            console.log(response.current_condition.condition);
+        }
+    };
+    
+    request.open("GET", "http://url-service-web.com/api/users"); // Ouvrir une connexion vers un service web
+    // request.setRequestHeader("Content-Type", "application/json");
+    request.send(JSON.stringify(jsonBody); // On envoie la requête au service web, JSON.stringify(jsonBody) permet de transformer le javascript en json
+
+## **Programmation orientée objet**
 
     function Student () { // Créer une variable avec une fonction en UpperCase 
     }
@@ -382,6 +518,11 @@ Exemple : 10%3 = 1 car il peut diviser 9 par 3 et il restera 1
     		}
     
 
+**RegEx**
+
+**Permet de faire des recherches dans le code**
+
+![](Capture_decran_2019-04-13_a_00-5b788b98-8d87-40f0-a9a1-8b4881ddfde7.36.29.png)
 
 **Tester si un code postal est correct**
 
